@@ -13,7 +13,6 @@ body {
   flex-direction: column;
 }
 
-/* CENTER layout */
 .layout {
   flex: 1;
   display: grid;
@@ -26,7 +25,6 @@ body {
   padding: 40px 0;
 }
 
-/* LEFT */
 .left {
   border-right: 1px solid #e9edf2;
   padding-right: 60px;
@@ -78,7 +76,7 @@ body {
 }
 .mockup--empty .mockup__placeholder { opacity: 1; }
 
-/* RIGHT */
+
 .right {
   display: grid;
   justify-items: center;
@@ -168,7 +166,7 @@ body {
   font-size: 12px;
 }
 
-/* FOOTER */
+
 .footer {
   padding: 18px 0 26px;
 }
@@ -186,7 +184,7 @@ body {
   text-align: center;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
