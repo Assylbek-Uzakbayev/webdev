@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Facebook – Log in</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card" aria-label="Facebook login">
+      <header class="card__header">
+        <h1 class="logo" aria-label="Facebook">facebook</h1>
+      </header>
+
+      <form class="form" action="#" method="post">
+        <div class="field">
+          <label for="fb-email" class="label">Email or phone</label>
+          <input id="fb-email" name="email" type="text" class="input" autocomplete="username" required />
+        </div>
+
+        <div class="field">
+          <label for="fb-password" class="label">Password</label>
+          <input id="fb-password" name="password" type="password" class="input" autocomplete="current-password" required />
+        </div>
+
+        <button class="btn btn--primary" type="submit">Log In</button>
+
+        <nav class="links" aria-label="Login help links">
+          <a class="link" href="#">Forgot password?</a>
+          <a class="link" href="#">Create new account</a>
+        </nav>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
