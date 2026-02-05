@@ -1,0 +1,320 @@
+* { box-sizing: border-box; }
+
+:root{
+  --text:#24292f;
+  --muted:#57606a;
+  --border:#d0d7de;
+  --soft:#f6f8fa;
+  --bg:#ffffff;
+  --blue:#0969da;
+  --dark:#24292f;
+}
+
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* layout */
+.container{
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.hero{
+  padding: 72px 0 24px;
+  text-align: center;
+}
+
+.hero__inner{ max-width: 860px; }
+
+.hero__title{
+  margin:0 0 12px;
+  font-size: clamp(34px, 4.2vw, 54px);
+  font-weight: 700;             /* жирный емес */
+  letter-spacing: -0.03em;
+}
+
+.hero__desc{
+  margin: 0 auto 18px;
+  max-width: 76ch;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* buttons */
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;            /* жуан емес */
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+
+.btn--center{ margin: 0 auto; }
+
+.btn--block{
+  width: 100%;
+  text-align: center;
+}
+
+.btn--dark{
+  background: var(--dark);
+  border-color: var(--dark);
+  color:#fff;
+}
+.btn--dark:hover{ filter: brightness(1.05); }
+
+.btn--light{
+  background:#fff;
+}
+.btn--light:hover{ background: var(--soft); }
+
+/* pricing */
+.pricing{ padding: 24px 0 14px; }
+
+.cards{
+  display:flex;
+  justify-content:center;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.card{
+  width: 360px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 18px 40px rgba(0,0,0,.08);
+  padding: 18px;
+  position: relative;
+}
+
+.card--mid{ background: var(--soft); }
+
+.card--recommended{
+  border: 3px solid var(--blue);
+  padding-top: 42px;
+}
+
+/* Recommended bar */
+.recommended{
+  position:absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 22px;
+  background: var(--blue);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 600;
+  display:grid;
+  place-items:center;
+  letter-spacing: .10em;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+
+.card__head{ text-align: center; }
+
+.card__title{
+  margin: 0 0 6px;
+  font-size: 18px;
+  font-weight: 600;           /* жуан емес */
+}
+
+.card__sub{
+  margin: 0 0 12px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* price */
+.price{
+  display:flex;
+  justify-content:center;
+  align-items: baseline;
+  gap: 4px;
+  margin: 8px 0 12px;
+}
+
+.price__dollar{
+  font-size: 16px;
+  color: var(--muted);
+  transform: translateY(-6px);
+}
+
+.price__big{
+  font-size: 48px;
+  font-weight: 700;          /* жуан емес */
+  letter-spacing: -0.03em;
+}
+
+.price__cur{
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 2px;
+}
+
+.price__per{
+  font-size: 12px;
+  color: var(--muted);
+  margin-left: 6px;
+  font-weight: 400;
+}
+
+.starting{
+  margin: 0;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+/* buttons row in enterprise */
+.btn-row{
+  display:flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* divider like GitHub */
+.divider{
+  height: 1px;
+  background: #eaeef2;
+  margin: 14px -18px 10px;
+}
+
+/* lists */
+.list{
+  list-style:none;
+  padding:0;
+  margin:0;
+  font-size:12px;
+  color: var(--text);
+}
+
+.list li{
+  display:grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.list li::before{
+  content:"›";
+  color: var(--muted);
+  font-weight: 700;
+  transform: translateY(2px);
+}
+
+.list strong{
+  font-weight: 600;          /* қатты жуан емес */
+}
+
+.subline{
+  display:block;
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+  grid-column: 2 / -1;
+}
+
+/* featured add-ons inside card */
+.mini-title{
+  margin: 14px 0 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--blue);
+  letter-spacing: .02em;
+}
+
+.mini-list{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.mini-list li{
+  display:grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  padding: 8px 0;
+  font-size:12px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.mini-list li::before{
+  content:"›";
+  color: var(--muted);
+  font-weight: 700;
+  transform: translateY(2px);
+}
+
+/* add-ons section */
+.addons{ padding: 26px 0 70px; }
+
+.addons__head{
+  text-align:center;
+  margin: 12px 0 18px;
+}
+
+.addons__title{
+  margin: 0 0 8px;
+  font-size: 34px;
+  font-weight: 700;       /* жуан емес */
+  letter-spacing: -0.02em;
+}
+
+.addons__desc{
+  margin:0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.addons-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.addon{
+  border:1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  background:#fff;
+  box-shadow: 0 10px 24px rgba(0,0,0,.06);
+}
+
+.addon h3{
+  margin:0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.addon p{
+  margin:0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+/* responsive */
+@media (max-width: 980px){
+  .cards{ flex-direction: column; align-items:center; }
+  .card{ width: min(460px, 92vw); }
+  .addons-grid{ grid-template-columns: 1fr; }
+}

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Instagram – Log in</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="layout" aria-label="Instagram login">
+      
+      <aside class="left" aria-label="Promo section">
+        <div class="ig-icon">
+         <img src="instagram-logo.jpg" alt="Instagram logo">
+        </div>
+
+
+        <div class="left__content">
+          <h1 class="left__title">
+            See what moments in life<br />
+            your <span>close friends</span><br />
+            shared.
+          </h1>
+
+          <div class="mockup" aria-label="Phone mockup image (optional)">
+            <img src="insta-images.png" alt="Instagram promo mockup">
+            </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT (login form) -->
+      <section class="right" aria-label="Login panel">
+        <header class="right__header">
+          <h2 class="right__title">Log in to Instagram</h2>
+        </header>
+
+        <form class="card" action="#" method="post">
+          <div class="field">
+            <label for="ig-user" class="label">Username, phone, or email</label>
+            <input id="ig-user" name="username" class="input" type="text" autocomplete="username" required
+                   placeholder="Username, phone or email" />
+          </div>
+
+          <div class="field">
+            <label for="ig-pass" class="label">Password</label>
+            <input id="ig-pass" name="password" class="input" type="password" autocomplete="current-password" required
+                   placeholder="Password" />
+          </div>
+
+          <button class="btn btn--primary" type="submit">Log in</button>
+
+          <a class="link link--center" href="#">Forgot password?</a>
+
+          <div class="or" role="separator" aria-label="OR separator">
+            <span class="or__line"></span>
+            <span class="or__text">OR</span>
+            <span class="or__line"></span>
+          </div>
+
+          <button class="btn btn--outline" type="button">
+            <span class="fb-dot" aria-hidden="true">●</span>
+            Log in with Facebook
+          </button>
+
+          <a class="link link--center" href="#">Create new account</a>
+
+          <p class="meta" aria-label="Meta label">∞ Meta</p>
+        </form>
+      </section>
+    </section>
+
+    <footer class="footer" aria-label="Footer links (simplified)">
+      <div class="footer__line"></div>
+      <p class="footer__small">Meta · About · Blog · Jobs · Help · API · Privacy · Terms</p>
+      <p class="footer__small">English · © 2026 Instagram from Meta</p>
+    </footer>
+  </main>
+</body>
+</html>

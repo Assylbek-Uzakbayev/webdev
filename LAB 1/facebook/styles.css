@@ -1,0 +1,88 @@
+body {
+  background: #f0f2f5;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 80px;
+}
+
+/* LEFT */
+.left {
+  max-width: 500px;
+}
+
+.logo {
+  color: #1877f2;
+  font-size: 56px;
+  margin: 0;
+}
+
+.text {
+  font-size: 24px;
+}
+
+/* RIGHT CARD */
+.card {
+  background: white;
+  padding: 20px;
+  width: 360px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-btn {
+  background: #1877f2;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.create-btn {
+  background: #42b72a;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.forgot {
+  text-align: center;
+  color: #1877f2;
+  text-decoration: none;
+}
+
+.bottom-text {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* МОБИЛЬНЫЙ НҰСҚА */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
