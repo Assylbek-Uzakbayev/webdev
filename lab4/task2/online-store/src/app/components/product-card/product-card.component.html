@@ -1,0 +1,93 @@
+<article class="product-card">
+
+  <!-- Image -->
+  <div class="card-image-wrapper">
+    <img [src]="product.images[activeImageIndex]" [alt]="product.name"
+      class="card-main-image" (click)="toggleGallery()" />
+
+    <button class="arrow arrow-left" (click)="prevImage()">&#8249;</button>
+    <button class="arrow arrow-right" (click)="nextImage()">&#8250;</button>
+
+    <div class="image-counter">{{ activeImageIndex + 1 }}/{{ product.images.length }}</div>
+    <div class="rating-badge">
+      <span class="star-icon">★</span> {{ product.rating }}
+    </div>
+  </div>
+
+  <!-- Thumbnails -->
+  <div class="thumbnails">
+    <img *ngFor="let img of product.images; let i = index"
+      [src]="img" [alt]="product.name" class="thumbnail"
+      [class.active]="i === activeImageIndex"
+      (click)="setActiveImage(i)" />
+  </div>
+
+  <!-- Content -->
+  <div class="card-content">
+
+    <div class="star-rating">
+      <span *ngFor="let star of getStars(product.rating); let i = index"
+        class="star"
+        [class.filled]="isStarFilled(i, product.rating)"
+        [class.half]="isStarHalf(i, product.rating)">★</span>
+      <span class="rating-value">{{ product.rating }}</span>
+    </div>
+
+    <h3 class="product-name">
+      <a [href]="product.link" target="_blank" rel="noopener noreferrer">{{ product.name }}</a>
+    </h3>
+
+    <p class="product-description">{{ product.description }}</p>
+
+    <!-- Price -->
+    <div class="price-row">
+      <span class="product-price">{{ formatPrice(product.price) }}</span>
+      <span class="installment-badge">{{ getInstallment(product.price) }} ₸ × 3</span>
+    </div>
+
+    <!-- Actions -->
+    <div class="card-actions">
+      <a [href]="product.link" target="_blank" class="btn btn-primary">Купить</a>
+      <a [href]="product.link" target="_blank" class="btn btn-secondary">В рассрочку</a>
+
+      <!-- ── Lab 5: Like button ── -->
+      <button type="button"
+      class="btn btn-fav"
+      (click)="onToggleFavorite($event)"
+      [class.active]="isFavorite">
+        ★
+      </button>
+
+      <div class="share-wrapper">
+        <button class="btn btn-share" (click)="toggleShareMenu()" title="Поделиться">&#8599;</button>
+        <div class="share-menu" *ngIf="showShareMenu">
+          <button class="share-option whatsapp" (click)="shareWhatsApp()">📱 WhatsApp</button>
+          <button class="share-option telegram" (click)="shareTelegram()">✈️ Telegram</button>
+        </div>
+      </div>
+
+      <!-- ── Lab 5: Delete button ── -->
+      <button class="btn btn-delete" (click)="delete()" title="Удалить">🗑</button>
+    </div>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="gallery-overlay" *ngIf="showGallery" (click)="toggleGallery()">
+    <div class="gallery-modal" (click)="$event.stopPropagation()">
+      <button class="gallery-close" (click)="toggleGallery()">✕</button>
+      <div class="gallery-main">
+        <button class="gallery-arrow left" (click)="prevImage()">&#8249;</button>
+        <img [src]="product.images[activeImageIndex]" [alt]="product.name" class="gallery-main-img" />
+        <button class="gallery-arrow right" (click)="nextImage()">&#8250;</button>
+      </div>
+      <div class="gallery-thumbs">
+        <img *ngFor="let img of product.images; let i = index"
+          [src]="img" [alt]="product.name" class="gallery-thumb"
+          [class.active]="i === activeImageIndex"
+          (click)="setActiveImage(i)" />
+      </div>
+    </div>
+  </div>
+
+</article>

@@ -54,3 +54,17 @@ formEl.addEventListener("submit", (event) => {
     event.preventDefault();
     addTodo();
 });
+document.getElementById("showDoneBtn").onclick = () => {
+  document.querySelectorAll(".todo-item").forEach(li => {
+    if (!li.classList.contains("is-done")) {
+      li.style.display = "none";
+    }
+  });
+};
+document.getElementById("showAllbtn").onclick = () => {
+  document.querySelectorAll(".todo-item").forEach(li => {
+    if (!li.classList.contains("is-done")) {
+      li.style.display = "none";
+    }
+  });
+};

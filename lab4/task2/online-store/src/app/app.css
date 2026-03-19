@@ -1,0 +1,61 @@
+.store {
+    font-family: 'Segoe UI', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 16px;
+  }
+  
+  .store-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .store-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin: 0;
+  }
+  
+  .store-subtitle {
+    color: #666;
+    margin: 8px 0 0;
+  }
+  
+  .category-nav {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .category-btn {
+    padding: 10px 24px;
+    border: 2px solid #e0e0e0;
+    border-radius: 30px;
+    background: #fff;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #444;
+  }
+  
+  .category-btn:hover {
+    border-color: #0066ff;
+    color: #0066ff;
+  }
+  
+  .category-btn.active {
+    background: #0066ff;
+    border-color: #0066ff;
+    color: #fff;
+  }
+  
+  .welcome {
+    text-align: center;
+    padding: 80px 20px;
+    font-size: 1.2rem;
+    color: #888;
+  }

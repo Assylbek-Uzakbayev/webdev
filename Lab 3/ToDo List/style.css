@@ -59,6 +59,9 @@ button {
 button:hover {
     opacity: 0.9;
 }
+.filters {
+    margin-top: 10px;
+}
 
 ul {
     list-style: none;

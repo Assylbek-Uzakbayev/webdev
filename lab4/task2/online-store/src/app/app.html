@@ -1,0 +1,27 @@
+<div class="store">
+  <header class="store-header">
+    <h1 class="store-title">Online Store</h1>
+    <p class="store-subtitle">Choose a category to see products</p>
+  </header>
+
+  <nav class="category-nav">
+    <button
+      class="category-btn"
+      *ngFor="let c of categories"
+      [class.active]="isActive(c)"
+      (click)="selectCategory(c)"
+    >
+      {{ c.name }}
+    </button>
+  </nav>
+
+  <div *ngIf="!selectedCategory" class="welcome">
+    Select a category to display products
+  </div>
+
+  <app-product-list
+    *ngIf="selectedCategory"
+    [products]="selectedProducts"
+    [categoryName]="selectedCategory!.name"
+  ></app-product-list>
+</div>

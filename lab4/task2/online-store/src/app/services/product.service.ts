@@ -1,0 +1,153 @@
+import { Injectable } from '@angular/core';
+import { Category } from '../models/category.model';
+import { Product } from '../models/product.model';
+
+@Injectable({ providedIn: 'root' })
+export class ProductService {
+
+  getCategories(): Category[] {
+    return [
+      { id: 1, name: 'Смартфоны' },
+      { id: 2, name: 'Компьютеры' },
+      { id: 3, name: 'Аудио' },
+      { id: 4, name: 'Планшеты' },
+    ];
+  }
+
+  getProducts(): Product[] {
+    const products: Product[]=[
+      // ── Смартфоны (categoryId: 1) ──
+      { id:1,  categoryId:1, likes:0, name:'Apple iPhone 15 128GB Black',
+        description:'Смартфон с чипом A16 Bionic и 48 Мп основной камерой. Дисплей Super Retina XDR 6.1", поддержка Dynamic Island и USB-C.',
+        price:319990, rating:3,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h32/hbe/63979848966174.jpg?format=preview-medium',
+        images:['https://object.pscloud.io/cms/cms/Photo/img_0_81_3858_2_1_320.webp','https://itechh.kz/image/cache/catalog/15iPhone/30069420bb1.jpg-600x600.png','https://api.technodom.kz/f3/api/v1/images/800/800/smartfon_gsm_apple_iphone_15_pro_128gb_81286148_black_titanium_mtuv3_274402_1.jpg'],
+        link:'https://kaspi.kz/shop/p/apple-iphone-15-128gb-chernyi-113137790/?c=750000000' },
+      { id:2,  categoryId:1, likes:0, name:'Samsung Galaxy S24 256GB Onyx Black',
+        description:'Флагманский смартфон с Galaxy AI, чипом Exynos 2400 и тройной камерой 50+12+10 Мп. Экран Dynamic AMOLED 2X, 6.2".',
+        price:289990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h5c/hd1/85261690331166.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/pdb/p79/1610315.png?format=gallery-large'],
+        link:'https://kaspi.kz/shop/p/samsung-galaxy-s24-fe-5g-8-gb-128-gb-chernyi-128143528/?c=750000000' },
+      { id:3,  categoryId:1, likes:0, name:'Xiaomi Redmi Note 13 Pro+ 256GB',
+        description:'Смартфон с камерой 200 Мп и быстрой зарядкой 120 Вт. AMOLED дисплей 6.67", защита IP68, аккумулятор 4600 мАч.',
+        price:149990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hbf/h2b/84499481993246.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p6a/p00/33081235.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/xiaomi-redmi-note-13-pro-5g-nfc-12-gb-512-gb-chernyi-116684101/?c=750000000' },
+      { id:4,  categoryId:1, likes:0, name:'Apple iPhone 14 128GB Purple',
+        description:'Смартфон с чипом A15 Bionic, основной камерой 12 Мп и экраном Super Retina XDR 6.1".',
+        price:249990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hc2/hbd/64555480096798.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/hb8/h19/86042949648414.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/ha8/h64/86042949713950.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/hd4/h92/86042949746718.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/apple-iphone-14-128gb-chernyi-106363023/?c=750000000' },
+      { id:5,  categoryId:1, likes:0, name:'Samsung Galaxy A55 5G 256GB',
+        description:'Смартфон с тройной камерой 50 Мп, экраном Super AMOLED 6.6" и защитой IP67.',
+        price:179990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h39/hf4/85783869423646.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p2d/pd9/24809545.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/samsung-galaxy-s24-fe-5g-8-gb-128-gb-chernyi-podarok-134698302/?c=750000000' },
+
+      // ── Компьютеры (categoryId: 2) ──
+      { id:6,  categoryId:2, likes:0, name:'Apple MacBook Air 13 M2 8/256GB',
+        description:'Ноутбук на чипе Apple M2 с 8-ядерным CPU и 8-ядерным GPU. Дисплей Liquid Retina 13.6", 18 часов автономной работы.',
+        price:569990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h1e/h9f/64565244239902.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/h06/h08/64213171568670.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h2d/h82/83648592183326.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h3a/h0d/64213216755742.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/apple-macbook-air-13-2020-13-3-8-gb-ssd-256-gb-macos-mgn63ru-a-101182724/?c=750000000' },
+      { id:7,  categoryId:2, likes:0, name:'Sony PlayStation 5 825GB White',
+        description:'Игровая консоль нового поколения с SSD 825 ГБ и поддержкой 4K 120fps. Контроллер DualSense с адаптивными триггерами.',
+        price:299990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hdc/h5c/63820994732062.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/hf1/h03/84526695677982.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/pef/p29/78474502.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/sony-playstation-5-slim-114696098/?c=750000000' },
+      { id:8,  categoryId:2, likes:0, name:'Samsung 55 QLED 4K Smart TV QE55Q80C',
+        description:'Телевизор QLED 55 дюймов с поддержкой 4K HDR и частотой 144 Гц. Quantum Dot, голосовое управление.',
+        price:389990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h15/hd4/82760680120350.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/ha0/hcf/64109727121438.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/huayu-samsung-smart-tv-chernyi-101961716/?c=750000000' },
+      { id:9,  categoryId:2, likes:0, name:'Dyson V15 Detect Absolute',
+        description:'Беспроводной пылесос с лазерным обнаружением пыли. Мощность всасывания 240 Вт, 60 минут работы.',
+        price:319990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h3a/h4c/65105501872158.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/pa4/p32/77965055.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/pdc/p32/77965057.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/dyson-v15-detect-absolute-sv47-serebristyi-113691132/?c=750000000' },
+      { id:10, categoryId:2, likes:0, name:'Xiaomi Mi Robot Vacuum Mop 2 Pro',
+        description:'Робот-пылесос с лазерной навигацией LDS и мощностью 3000 Па. Умное картирование, приложение Mi Home.',
+        price:129990, rating:3,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h73/h7b/64144685498398.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/h8d/h23/64319245352990.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h21/h0a/64319250333726.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/xiaomi-mi-robot-vacuum-mop-2-pro-mjst1shw-belyi-103536021/?c=750000000' },
+
+      // ── Аудио (categoryId: 3) ──
+      { id:11, categoryId:3, likes:0, name:'Apple AirPods Pro 2 USB-C',
+        description:'Беспроводные наушники с активным шумоподавлением H2 и адаптивным звуком. До 6 часов работы, MagSafe зарядка.',
+        price:129990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hb5/h5e/84166498705438.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p68/p4c/3527586.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/p83/p4b/3531601.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/pd3/p0d/3532810.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/naushniki-apple-airpods-max-2-cherno-sinii-128622804/?c=750000000' },
+      { id:12, categoryId:3, likes:0, name:'Bose QuietComfort 45 Black',
+        description:'Накладные наушники с активным шумоподавлением и звуком TriPort. Режимы Quiet и Aware, 24 часа работы, Bluetooth 5.1.',
+        price:159990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h88/he8/63979891810334.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/hba/h67/64374646538270.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/hb0/h6c/64374649651230.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/haf/h7a/64374651715614.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/naushniki-bose-quietcomfort-45-chernyi-102978612/?c=750000000' },
+      { id:13, categoryId:3, likes:0, name:'Sony WH-1000XM5 Black',
+        description:'Беспроводные наушники с лучшим в классе шумоподавлением и 30 часами работы. Multipoint Bluetooth.',
+        price:149990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/he1/h4c/83457437712414.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/h9c/h23/65099684020254.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/hd5/hd0/65099686150174.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/naushniki-sony-wh-1000xm5-chernyi-105259822/?c=750000000' },
+      { id:14, categoryId:3, likes:0, name:'Samsung Galaxy Buds2 Pro White',
+        description:'TWS-наушники с интеллектуальным ANC и звуком Hi-Fi 24bit. IPX7, до 8 часов работы.',
+        price:79990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h5c/h77/64455554236446.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/hcf/h8a/86487901962270.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/hf4/h1a/86487902093342.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/naushniki-samsung-galaxy-buds3-serebristyi-121198899/?c=750000000' },
+      { id:15, categoryId:3, likes:0, name:'JBL Tune 770NC Black',
+        description:'Накладные наушники с адаптивным шумоподавлением. До 70 часов работы, складная конструкция.',
+        price:49990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hf8/hf7/85350268821534.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/hcb/h78/82294170255390.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h5e/h26/82294170779678.jpg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/naushniki-jbl-tune-770nc-chernyi-112143394/?c=750000000' },
+
+      // ── Планшеты (categoryId: 4) ──
+      { id:16, categoryId:4, likes:0, name:'Apple iPad Air 5 64GB Wi-Fi Space Gray',
+        description:'Планшет с чипом M1, дисплеем Liquid Retina 10.9" и поддержкой Apple Pencil 2. USB-C, 12 Мп камера, Touch ID.',
+        price:249990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h3e/h1c/63979696963614.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p23/pc7/37134129.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/pbd/p8c/36122455.jpeg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/p53/p89/36122456.jpeg?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/apple-ipad-air-11-2025-wi-fi-11-djuim-8-gb-128-gb-seryi-137965083/?c=750000000' },
+      { id:17, categoryId:4, likes:0, name:'Samsung Galaxy Tab S9 128GB Wi-Fi',
+        description:'Планшет с AMOLED дисплеем 11", чипом Snapdragon 8 Gen 2 и защитой IP68. S Pen в комплекте.',
+        price:349990, rating:5,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h8b/hda/84907998879774.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p6b/pc0/1610157.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/p80/pc3/1610164.png?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/p9c/pc3/1610165.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/samsung-galaxy-tab-s9-wi-fi-8-gb-128-gb-kremovyi-116592048/?c=750000000' },
+      { id:18, categoryId:4, likes:0, name:'Xiaomi Pad 6 8/256GB',
+        description:'Планшет с дисплеем 11" 144 Гц, чипом Snapdragon 870 и аккумулятором 8840 мАч.',
+        price:179990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/hda/h8e/84419428147230.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/h32/hdc/82729741582366.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/h32/hdc/82729741582366.jpg?format=gallery-medium','https://resources.cdn-kaspi.kz/img/m/p/p95/pfa/78318163.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/xiaomi-pad-6-11-djuim-8-gb-256-gb-seryi-112453226/?c=750000000' },
+      { id:19, categoryId:4, likes:0, name:'Apple iPad 10 64GB Wi-Fi Blue',
+        description:'Планшет с чипом A14 Bionic, дисплеем Liquid Retina 10.9" и фронтальной камерой 12 Мп.',
+        price:199990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h12/h4f/84381948477470.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/h12/h4f/84381948477470.jpg?format=preview-medium'],
+        link:'https://kaspi.kz/shop/p/apple-ipad-10-wi-fi-64-gb-sinii-109609464/?c=750000000' },
+      { id:20, categoryId:4, likes:0, name:'Samsung Galaxy Watch 6 Classic 47mm',
+        description:'Умные часы с безелем из нержавеющей стали и экраном 1.5". Мониторинг ЭКГ, давления, сна, 40 часов работы.',
+        price:139990, rating:4,
+        image:'https://resources.cdn-kaspi.kz/img/m/p/h2e/h14/83004745883678.jpg?format=preview-medium',
+        images:['https://resources.cdn-kaspi.kz/img/m/p/p1c/pf2/54617116.png?format=gallery-medium'],
+        link:'https://kaspi.kz/shop/p/samsung-galaxy-watch-8-classic-46-mm-serebristyi-chernyi-142950290/?c=750000000' },
+    ];
+    return products.map(p => ({ ...p, isFavorite: p.isFavorite ?? false }));
+  }
+
+  getProductsByCategoryId(categoryId: number): Product[] {
+    return this.getProducts().filter(p => p.categoryId === categoryId);
+  }
+}
