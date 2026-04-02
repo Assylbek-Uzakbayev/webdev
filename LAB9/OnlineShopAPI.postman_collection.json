@@ -1,0 +1,30 @@
+{
+  "info": {
+    "name": "Online Shop API",
+    "_postman_id": "online-shop-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {"name": "Get All Categories", "request": {"method": "GET", "url": "http://127.0.0.1:8000/api/categories/"}},
+        {"name": "Get Category by ID", "request": {"method": "GET", "url": "http://127.0.0.1:8000/api/categories/1/"}},
+        {"name": "Get Products by Category", "request": {"method": "GET", "url": "http://127.0.0.1:8000/api/categories/1/products/"}},
+        {"name": "Create Category", "request": {"method": "POST", "url": "http://127.0.0.1:8000/api/categories/", "body": {"mode": "raw", "raw": "{\"name\": \"Sports\"}", "options": {"raw": {"language": "json"}}}}},
+        {"name": "Update Category", "request": {"method": "PUT", "url": "http://127.0.0.1:8000/api/categories/1/", "body": {"mode": "raw", "raw": "{\"name\": \"Electronics Updated\"}", "options": {"raw": {"language": "json"}}}}},
+        {"name": "Delete Category", "request": {"method": "DELETE", "url": "http://127.0.0.1:8000/api/categories/1/"}}
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {"name": "Get All Products", "request": {"method": "GET", "url": "http://127.0.0.1:8000/api/products/"}},
+        {"name": "Get Product by ID", "request": {"method": "GET", "url": "http://127.0.0.1:8000/api/products/6/"}},
+        {"name": "Create Product", "request": {"method": "POST", "url": "http://127.0.0.1:8000/api/products/", "body": {"mode": "raw", "raw": "{\"name\": \"Test Product\", \"price\": 99.99, \"description\": \"Test\", \"count\": 5, \"is_active\": true, \"category\": 2}", "options": {"raw": {"language": "json"}}}}},
+        {"name": "Update Product", "request": {"method": "PUT", "url": "http://127.0.0.1:8000/api/products/6/", "body": {"mode": "raw", "raw": "{\"name\": \"Updated Product\", \"price\": 199.99, \"description\": \"Updated\", \"count\": 10, \"is_active\": true, \"category\": 2}", "options": {"raw": {"language": "json"}}}}},
+        {"name": "Delete Product", "request": {"method": "DELETE", "url": "http://127.0.0.1:8000/api/products/6/"}}
+      ]
+    }
+  ]
+}
